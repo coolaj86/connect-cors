@@ -10,7 +10,7 @@ echo "Each test will print '${PASS}' or '${FAIL}"
 echo
 
 #
-# Test that without Origin, the request sets no CORS headers
+echo "Test that without Origin, the request sets no CORS headers"
 #
 curl http://${HOST} --include --silent \
   -H 'User-Agent: Mozilla/5.0 (Windows NT 5.1) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.815.0 Safari/535.1' \
@@ -20,7 +20,7 @@ curl http://${HOST} --include --silent \
   && echo "${FAIL}" || echo "${PASS}"
 
 #
-# Tests that OPTIONS will end the request without a body
+echo "Tests that OPTIONS will end the request without a body"
 #
 curl http://${HOST}/four-oh-four-me-please --silent \
   -X OPTIONS \
@@ -32,7 +32,7 @@ curl http://${HOST}/four-oh-four-me-please --silent \
   && echo "${FAIL}" || echo "${PASS}"
 
 #
-# Tests that Browsers will get 404'd Access-Control headers
+echo "Tests that Browsers will get 404'd Access-Control headers"
 #
 curl http://${HOST}/four-oh-four-me-please --include --silent \
   -H 'User-Agent: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; de) Opera 11.01' \
@@ -43,7 +43,7 @@ curl http://${HOST}/four-oh-four-me-please --include --silent \
   && echo "${PASS}" || echo "${FAIL}"
 
 #
-# Tests that Browsers will get Access-Control headers
+echo "Tests that Browsers will get Access-Control headers"
 #
 curl http://${HOST}/four-oh-four-me-please --include --silent \
   -H 'User-Agent: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; de) Opera 11.01' \
@@ -54,7 +54,7 @@ curl http://${HOST}/four-oh-four-me-please --include --silent \
   && echo "${PASS}" || echo "${FAIL}"
 
 #
-# Tests that IE will get '*' rather than 'http://example.com'
+echo "Tests that IE will get '*' rather than 'http://example.com'"
 #
 curl http://${HOST} --include --silent \
   -H 'User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)' \

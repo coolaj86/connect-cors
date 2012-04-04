@@ -6,10 +6,10 @@
   "name": "connect-xcors",
   "description": "CORS / XHR2 support for Node.JS's Connect",
   "version": "0.1.0",
-  "homepage": "https://github.com/antono/connect-cors",
+  "homepage": "https://github.com/coolaj86/connect-cors",
   "repository": {
     "type": "git",
-    "url": "git://github.com/antono/connect-cors.git"
+    "url": "git://github.com/coolaj86/connect-cors.git"
   },
   "main": "connect-cors.js",
   "engines": {
